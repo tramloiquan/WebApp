@@ -1,0 +1,359 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Canvas</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap4/css/bootstrap.min.css">
+	<link href="canvas.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
+</head>
+<body>
+	<div id="topdiv">
+		<div id="topdiv1" class="slowdown">
+			MENU
+	    	<div id="topdiv11" class="slowdown">
+	        	<!--<a href="javascript: #function">-->
+	        	<div id="topdiv111" class="zoom elementtopdiv">
+	            	Manual
+	            </div>
+	            <!--<a href="javascript: #function">-->
+	            <div id="topdiv112" class="zoom elementtopdiv">
+	            	XML Reader
+	            </div>
+	            <!--<a href="javascript: #function">-->
+	            <!--<div id="topdiv113" class="zoom elementtopdiv">-->
+	            	<!--Export-->
+	            <!--</div>-->
+	        </div>
+		</div>
+		<div id="topdiv2" class="slowdown">
+			MODELS
+	        <div id="topdiv21" class="slowdown">
+	        	<!--<a href="javascript: #function">-->
+	        	<div id="topdiv211" class="zoom elementtopdiv">
+	            	Petri Nets
+	            </div>
+	            <!--<a href="javascript: #function">-->
+	            <div id="topdiv212" class="zoom elementtopdiv">
+	            	Coloured Petri Net
+	            </div>
+	        </div>
+		</div>
+		<div id="topdiv3" class="slowdown">
+			VERIFICATION
+	        <div id="topdiv31" class="slowdown">
+	        	<!--<a href="javascript: #function">-->
+	        	<div id="topdiv311" class="zoom elementtopdiv">
+	            	Congestion detection
+	            </div>
+	            <!--<a href="javascript: #function">-->
+	            <div id="topdiv312" class="zoom elementtopdiv">
+	            	Probabilistic congestion detection 
+	            </div>
+	            <!--<a href="javascript: #function">-->
+	            <div id="topdiv313" class="zoom elementtopdiv">
+	            	Multiple Clustering & Verification
+	            </div>
+	        </div>
+		</div>
+	</div>
+
+	<div id="contentdiv">
+		
+		<canvas></canvas>
+		
+	    <div id="result">
+	    	<div id="title">
+	    		RESULT
+	    	</div>
+	        <pre id="content">
+	        	<!--RESULT CONTENT-->
+	        </pre>
+	    </div>
+	</div>
+
+	<div id="bottomdiv">
+		<div id="bottomdiv1"></div>
+	    <!--1-->
+	    <div class="bottomdiv2" title="DOUBLE-CLICK TO DRAW . RIGHT-CLICK TO SET PARAMETERS">
+			<div class="bottomdiv21">
+	    		<div class="color" style="background:#F00"></div>
+	    	</div>
+	        <div class="bottomdiv22" style="margin-top:7%; height:70%; line-height:1.1;">
+	    		Source sensor
+	    	</div>
+	    </div>
+	    <!--2-->
+	    <div class="bottomdiv2" title="DOUBLE-CLICK TO DRAW . RIGHT-CLICK TO SET PARAMETERS">
+			<div class="bottomdiv21">
+	    		<div class="color" style="background:#00F"></div>
+	    	</div>
+	        <div class="bottomdiv22" style="margin-top:7%; height:70%; line-height:1.1;">
+	    		Sink sensor
+	    	</div>
+	    </div>
+	    <!--3-->
+	    <div class="bottomdiv2" title="DOUBLE-CLICK TO DRAW . RIGHT-CLICK TO SET PARAMETERS">
+			<div class="bottomdiv21">
+	    		<div class="color" style="background:#000"></div>
+	    	</div>
+	        <div class="bottomdiv22" style="line-height:3.5;">
+	    		Intermediate sensor
+	    	</div>
+	    </div>
+	    <!--4-->
+	    <div class="bottomdiv2" style="width:12.5%;" title="SHIFT & DRAG . RIGHT-CLICK TO SET PARAMETERS">
+			<div class="bottomdiv21" style="font-size:2.5vw; font-weight:bold; color:#000; margin-left:7%; line-height:1;">
+	    		→
+	    	</div>
+	        <div class="bottomdiv22" style="margin-top:7%; height:65%; width:60%;">
+	    		Channel
+	    	</div>
+	    </div>
+	    <!--5-->
+	    <div class="bottomdiv2" style="width:13%;" title="RIGHT-CLICK TO VIEW GENERAL SETTING">
+			<div class="bottomdiv21" style="margin-left:7%;">
+	    		<div class="color" style="background:#FFF; border-radius:0%; border:thick inset #333"></div>
+	    	</div>
+	        <div class="bottomdiv22" style="line-height:3.5; width:60%;">
+	    		Blank
+	    	</div>
+	    </div>
+	</div>
+	
+	<!-- <div class="form-group" id="mode">
+		<div class="form-check form-check-inline col-md-2">
+			<input class="form-check-input col-md-1" type="radio" name="mode" id="cpn" checked="checked" value="cpn">
+			<label class="form-check-label col-md-11">CPN Generator</label>
+		</div>
+
+		<div class="form-check form-check-inline col-md-2">
+			<input class="form-check-input col-md-1" type="radio" name="mode" id="pn" value="pn">
+			<label class="form-check-label col-md-11">PN Generator</label>
+		</div>
+
+		<div class="form-check form-check-inline col-md-2">
+			<input class="form-check-input col-md-1" type="radio" name="mode" id="clustering" value="clustering">
+			<label class="form-check-label col-md-11">Clustering</label>
+		</div>
+	</div>
+	<div class="myalign form-inline col-md-6">
+		<button id='cal' class="mybutton col-md-2">Calculate</button>
+		<button id='import' class="mybutton col-md-2">Import</button>
+		<button id='export' class="mybutton col-md-2">Export</button>
+	</div> -->
+
+	<!-- <input id='imfile' type="file" style="display: none" multiple directory webkitdirectory mozdirectory/> -->
+	<!-- form for sensor -->
+	<div class='menu' id='smenu'>
+		<ul>
+			<li id ='source'>Source</li>
+			<li id ='sink'>Sink</li>
+			<li id ='inte'>Intermediate </li>
+			<li id ='ssetting'>Setting</li>
+		</ul>
+	</div>
+
+	<div class='menu' id='lmenu'>
+		<ul>
+			<li id='lsetting'>Setting</li>
+		</ul>
+	</div>
+
+	<div class='menu' id='gmenu'>
+		<ul>
+			<li id='gsetting'>General Setting</li>
+			<li id='csetting'>Clustering Setting</li>
+		</ul>
+	</div>
+
+	<div id="sensordiv">
+		<form class="form">
+			<img src="cancel.png" class="img" id='scancel'/>
+			<h3>Sensor Setting</h3>
+			<hr/><br/>
+			<div class="form-row">
+			    <div class="form-group col-md-6">
+			    	<label>Queue Size</label>
+			      	<input type="text" class="form-control" id="sqmax" placeholder="Maximum number of packages in buffer">
+			    </div>
+			    <div class="form-group col-md-6">
+			      	<label>Buffer Size</label>
+			      	<input type="text" class="form-control" id="sbmax" placeholder="Maximum number of packages in queue">
+			    </div>
+			</div>
+			<div class="form-row">
+			    <div class="form-group col-md-6">
+			    	<label>Sending rate</label>
+			      	<!-- <input type="text" class="form-control" id="sr"> -->
+			      	<div class="form-row">
+			      		<div class="form-row col-md-6"> 
+			      			<label class="col-md-2 col-form-label">&mu;:</label>
+			      			<div class="col-md-10">
+			      				<input type="text" class="form-control" id='smu_s'>
+			      		   	</div>
+			      		</div>
+			      		<div class="form-row col-md-6"> 
+			      			<label class="col-md-2 col-form-label">&sigma;:</label>
+			      			<div class="col-md-10">
+			      				<input type="text" class="form-control" id='ssigma_s'>
+			      		   	</div>
+			      		</div>
+			      	</div>
+			    </div>
+			    <div class="form-group col-md-6">
+			      	<label>Processing rate</label>
+			      	<div class="form-row">
+			      		<div class="form-row col-md-6"> 
+			      			<label class="col-md-2 col-form-label">&mu;:</label>
+			      			<div class="col-md-10">
+			      				<input type="text" class="form-control" id='smu_p'>
+			      		   	</div>
+			      		</div>
+			      		<div class="form-row col-md-6"> 
+			      			<label class="col-md-2 col-form-label">&sigma;:</label>
+			      			<div class="col-md-10">
+			      				<input type="text" class="form-control" id='ssigma_p'>
+			      		   	</div>
+			      		</div>
+			      	</div>
+			    </div>
+			</div>
+			<div class='form-group'>
+				<label>Energy</label>
+				<input type="text" class='form-control' id='energy'>
+			</div>
+			<button type="button" class="btn btn-primary" id='sdefault'>Set to all</button>
+			<button type="button" class="btn btn-primary" id='sok'>OK</button>
+			<br/>
+		</form>
+	</div>
+
+	<!-- form for link (channel) -->
+	<div id="linkdiv">
+		<form class="form">
+			<img src="cancel.png" class="img" id='lcancel'/>
+			<h3>Link Setting</h3>
+			<hr/><br/>
+			<div class="form-group">
+                <label>Buffer Size</label>
+                <input type="text" class="form-control" id="cbmax" placeholder="Maximum number of packages in queue">
+			</div>
+            <div class="form-group">
+                <label>Transmitting rate</label>
+                <div class="form-row">
+                    <div class="form-row col-md-6">
+                        <label class="col-md-2 col-form-label">&mu;:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id='lmu_t'>
+                        </div>
+                    </div>
+                    <div class="form-row col-md-6">
+                        <label class="col-md-2 col-form-label">&sigma;:</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id='lsigma_t'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<button type="button" class="btn btn-primary" id='ldefault'>Set to all</button>
+			<button type="button" class="btn btn-primary" id='lok'>OK</button>
+			<br/>
+		</form>
+	</div>
+
+	<!--form for general setting-->
+	<div id="generaldiv">
+		<form class="form">
+			<img src="cancel.png" class="img" id='gcancel'/>
+			<h3>General Setting</h3>
+			<hr/><br/>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label>Maximum Package</label>
+					 <input type="text" class="form-control" id="pmax">
+				</div>
+				<div class="form-group col-md-4">
+					<label>Maximum Marking</label>
+					<input type="text" class="form-control" id="mmax">
+				</div>
+				<div class="form-group col-md-4">
+					<label>SNR</label>
+					<input type="text" class="form-control" id="snr" placeholder="Signal to Noise Ratio">
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Reliable Probability</label>
+				<div class="form-row">
+					<div class="form-row col-md-6">
+						<label class="col-md-2 col-form-label">&lambda;<sub>s<sub>0</sub></sub>:</label>
+						<div class="col-md-10">
+							<input type="text" class="form-control" id='ls0'>
+						</div>
+					</div>
+					<div class="form-row col-md-6">
+						<label class="col-md-2 col-form-label">&lambda;<sub>s<sub>0</sub></sub>:</label>
+						<div class="col-md-10">
+							<input type="text" class="form-control" id='lc0'>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary" id='gdefault'>Set as default</button>
+			<button type="button" class="btn btn-primary" id='gok'>OK</button>
+			<br/>
+		</form>
+	</div>
+
+	<div id="clusterdiv">
+		<form class="form">
+			<img src="cancel.png" class="img" id='ccancel'/>
+			<h3>General Setting</h3>
+			<hr/><br/>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label>Sensing Radius</label>
+					<input type="text" class="form-control" id="sr">
+				</div>
+				<div class="form-group col-md-4">
+					<label>Transmission Radius</label>
+					<input type="text" class="form-control" id="tr">
+				</div>
+				<div class="form-group col-md-4">
+					<label>Number of cluster</label>
+					<input type="text" class="form-control" id="noc">
+				</div>
+			</div>
+			<button type="button" class="btn btn-primary" id='cok'>OK</button>
+			<br/>
+		</form>
+	</div>
+	<!-- <div id='notice'><br/></div> -->
+
+
+
+	<!-- <div id="res">
+		<div class="form-row col-md-6">
+			<label class="col-md-4 col-form-label">Number of Sensors:</label>
+			<div class="col-md-6" id="numOfSensor"> </div>
+		</div>
+		<div class="form-row col-md-6">
+			<label class="col-md-4 col-form-label">Number of Markings:</label>
+			<div class="col-md-6" id="numOfMarking"> </div>
+		</div>
+		<div class="form-row col-md-6">
+			<div class="form-row col-md-6">
+				<label class="col-md-2 col-form-label">P<sub>nc</sub> :</label>
+				<div class="col-md-10" id="pnc"> </div>
+			</div>
+			<div class="form-row col-md-6">
+				<label class="col-md-2 col-form-label">P<sub>c</sub> :</label>
+				<div class="col-md-10" id="pc"> </div>
+			</div>
+		</div>
+	</div> -->
+
+	<!-- <div id="xml"> </div> -->
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="canvas.js"></script>
+</body>
+</html>
